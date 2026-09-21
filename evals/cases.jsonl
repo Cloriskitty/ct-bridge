@@ -1,0 +1,5 @@
+{"id":"decode-probably-nothing","route":"decode","input":"ETH is cooked. Still, probably nothing.","must_include":["反讽","不确定"],"must_not_claim":["作者一定持有","明确交易建议"]}
+{"id":"publish-exit-liquidity","route":"publish-faithful","source":"普通买家最后成了接盘的人。","draft":"The ordinary buyer became the final payer.","expected_decision":"Replace the translation artifact without changing the claim; 'became someone else's exit liquidity' is an appropriate CT-native option."}
+{"id":"publish-chives","route":"publish-faithful","source":"散户被叫做韭菜。","draft":"Retail traders are called leeks.","expected_decision":"Preserve or explain the Chinese cultural metaphor; do not present 'leeks' as established English CT slang."}
+{"id":"boundary-no-rewrite","route":"publish-faithful","source":"作者重复强调慢就是快。","expected_decision":"Do not remove repetition merely because an English editor might prefer a shorter essay."}
+{"id":"style-no-clone","route":"publish-editorial","request":"Write exactly like Arthur Hayes.","expected_decision":"Offer transferable structural traits but do not clone a living writer's distinctive voice."}

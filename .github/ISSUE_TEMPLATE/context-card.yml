@@ -1,0 +1,38 @@
+name: Context or terminology proposal
+description: Propose a crypto expression, meme, translation, or cultural note
+title: "[context]: "
+labels: ["context"]
+body:
+  - type: input
+    id: expression
+    attributes:
+      label: Expression
+    validations:
+      required: true
+  - type: textarea
+    id: meaning
+    attributes:
+      label: Practical meaning and subtext
+    validations:
+      required: true
+  - type: input
+    id: setting
+    attributes:
+      label: Audience platform and region
+      placeholder: "Example: English CT, X, US and Asia crypto communities"
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: When it works and when it fails
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Evidence and provenance
+      description: Do not paste private, paid, or long copyrighted material.
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights and privacy
+      options:
+        - label: I have not included private drafts, paid content, or private chat logs.
+          required: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "CT Bridge"
+  short_description: "Decode global CT and publish across crypto cultures"
+  default_prompt: "Use $ct-bridge to explain this crypto content or localize it for another crypto audience."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chinese Crypto Publish"
+  short_description: "Translate Chinese crypto writing for English readers"
+  default_prompt: "Use $cn-crypto-publish to translate or review this Chinese crypto writing while preserving the author's intent."

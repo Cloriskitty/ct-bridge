@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+build/
+*.egg-info/
+.DS_Store
+feedback.local.jsonl
+
+# Private taste packs and local research must never enter the public repo.
+private/
+taste-private/
+taste-packs/
+data/private/
+data/feedback/
+*.local.yaml
+*.local.yml
+*.local.json
+.env

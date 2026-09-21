@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ct-bridge.dev/schemas/feedback-event.schema.json",
+  "title": "CT Bridge Feedback Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "created_at",
+    "schema_version",
+    "client",
+    "client_version",
+    "consent_level",
+    "mode",
+    "concept",
+    "choice",
+    "rating"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "format": "uuid"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "schema_version": {"const": "1.0"},
+    "client": {"type": "string"},
+    "client_version": {"type": "string"},
+    "consent_level": {"enum": ["metadata", "snippet", "full-example"]},
+    "mode": {"type": "string"},
+    "concept": {"type": "string", "minLength": 1},
+    "choice": {"type": "string", "minLength": 1},
+    "rating": {"enum": ["useful", "wrong", "missing-context"]},
+    "reason": {"type": ["string", "null"]},
+    "platform": {"type": ["string", "null"]},
+    "audience": {"type": ["string", "null"]},
+    "snippet": {"type": "string", "maxLength": 1000}
+  },
+  "additionalProperties": false
+}

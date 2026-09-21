@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ct-bridge"
+version = "0.1.0"
+description = "Local task and feedback CLI for the CT Bridge agent skill"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "CT Bridge contributors"}]
+dependencies = []
+
+[project.scripts]
+ct-bridge = "ct_bridge.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
