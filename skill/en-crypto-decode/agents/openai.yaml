@@ -1,0 +1,4 @@
+interface:
+  display_name: "English Crypto Decode"
+  short_description: "Decode English crypto language and culture in Chinese"
+  default_prompt: "Use $en-crypto-decode to explain this English crypto content in Chinese, including only the context needed to understand it."

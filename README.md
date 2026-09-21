@@ -26,7 +26,7 @@ CT Bridge 是一个连接中文加密社区与英文 Crypto Twitter（CT）语�
 - 默认在本地处理用户内容，未经明确同意不上传反馈。
 - 可以分析可迁移的写作特征，但不模仿在世作者的独特文风。
 
-## 两个可安装 Skill
+## 三个可安装 Skill
 
 ### `ct-bridge`
 
@@ -40,6 +40,10 @@ CT Bridge 是一个连接中文加密社区与英文 Crypto Twitter（CT）语�
 - **CT-native**：在不改变原意的前提下，调整为英文加密读者熟悉的表达。
 - **Editorial**：仅在用户明确授权时重组、压缩或改写文章。
 
+### `en-crypto-decode`
+
+独立的英译中版本。除了翻译文字，也会按需解释 CT slang、meme、语气、潜台词与必要背景，并明确区分事实和推断。
+
 ## 安装
 
 ```bash
@@ -51,9 +55,18 @@ python3 scripts/install_skill.py --skills-dir "$CODEX_HOME/skills" --skill ct-br
 
 # 或者只安装中译英 Skill
 python3 scripts/install_skill.py --skills-dir "$CODEX_HOME/skills" --skill cn-crypto-publish
+
+# 或者只安装英译中 + 语境解码 Skill
+python3 scripts/install_skill.py --skills-dir "$CODEX_HOME/skills" --skill en-crypto-decode
 ```
 
-安装后刷新或重启 Agent，然后调用 `$ct-bridge`、`$cn-crypto-publish`，或直接用自然语言描述任务。
+安装后刷新或重启 Agent，然后调用 `$ct-bridge`、`$cn-crypto-publish`、`$en-crypto-decode`，或直接用自然语言描述任务。
+
+也可以把两个单向 Skill 分别打包：
+
+```bash
+python3 scripts/package_skills.py
+```
 
 ## CLI 示例
 
@@ -76,6 +89,7 @@ CLI 不调用模型，也不会通过网络发送数据。只有在用户主动�
 ```text
 skill/ct-bridge/          完整 Decode + Publish Skill
 skill/cn-crypto-publish/ 独立中译英 Skill
+skill/en-crypto-decode/  独立英译中 + 语境解码 Skill
 src/ct_bridge/           本地 CLI
 schemas/                 反馈数据协议
 evals/                   合成行为测试
@@ -127,7 +141,7 @@ Literal translation often loses that context, while aggressive polishing can ove
 - Keep user content local by default and never upload feedback without explicit consent.
 - Analyze transferable writing traits without cloning a living writer's distinctive voice.
 
-## Two installable skills
+## Three installable skills
 
 ### `ct-bridge`
 
@@ -141,6 +155,10 @@ A standalone Chinese-to-English skill for translation, bilingual review, and CT-
 - **CT-native**: adapt established crypto phrasing and rhythm without changing the underlying meaning.
 - **Editorial**: reorganize, compress, or rewrite only with explicit authorization.
 
+### `en-crypto-decode`
+
+A standalone English-to-Chinese skill. Beyond translation, it explains CT slang, memes, tone, subtext, and necessary background while keeping facts separate from inference.
+
 ## Installation
 
 ```bash
@@ -152,9 +170,18 @@ python3 scripts/install_skill.py --skills-dir "$CODEX_HOME/skills" --skill ct-br
 
 # Or install only the Chinese-to-English skill
 python3 scripts/install_skill.py --skills-dir "$CODEX_HOME/skills" --skill cn-crypto-publish
+
+# Or install only the English-to-Chinese decoding skill
+python3 scripts/install_skill.py --skills-dir "$CODEX_HOME/skills" --skill en-crypto-decode
 ```
 
-Refresh or restart the agent after installation, then invoke `$ct-bridge`, `$cn-crypto-publish`, or describe the task naturally.
+Refresh or restart the agent after installation, then invoke `$ct-bridge`, `$cn-crypto-publish`, `$en-crypto-decode`, or describe the task naturally.
+
+Package the two directional skills as separate ZIP files:
+
+```bash
+python3 scripts/package_skills.py
+```
 
 ## CLI examples
 
@@ -177,6 +204,7 @@ Private enhancements can live in a separate repository or local directory and be
 ```text
 skill/ct-bridge/          Complete Decode + Publish skill
 skill/cn-crypto-publish/ Standalone Chinese-to-English skill
+skill/en-crypto-decode/  Standalone English-to-Chinese decoding skill
 src/ct_bridge/           Local CLI
 schemas/                 Feedback data contracts
 evals/                   Synthetic behavioral cases

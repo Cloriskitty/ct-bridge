@@ -64,6 +64,25 @@ class InstallTests(unittest.TestCase):
             self.assertTrue((installed / "SKILL.md").exists())
             self.assertTrue((installed / "references" / "editorial-boundaries.md").exists())
 
+    def test_installs_decode_only_skill(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "scripts" / "install_skill.py"),
+                    "--skills-dir",
+                    directory,
+                    "--skill",
+                    "en-crypto-decode",
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            installed = Path(directory) / "en-crypto-decode"
+            self.assertTrue((installed / "SKILL.md").exists())
+            self.assertTrue((installed / "references" / "context-cards.md").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

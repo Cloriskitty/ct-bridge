@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ("ct-bridge", "cn-crypto-publish")
+SKILLS = ("ct-bridge", "cn-crypto-publish", "en-crypto-decode")
 
 
 def main() -> None:
